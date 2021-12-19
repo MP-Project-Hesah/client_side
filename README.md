@@ -115,11 +115,20 @@ So I can browse for my mood 🥳
 
 
 
-# Analysis :
-<div align="center">
-  <h1> Feature Analysis</h1>
-  </div>
 
+<div align="center">
+  <h1> Analysis</h1>
+  </div>
+  
+# Feature Analysis
+* Search a podcast
+* Search an episode
+* Subscribe to a podcast
+* Favorate podcast
+* Create podcast
+* Record episode
+* Play the episode in background.
+* 
 
 ![Untitled Workspace (22)](https://user-images.githubusercontent.com/92258765/146632196-e13f9afb-ed81-4c9a-9b59-d087df7d09a9.jpg)
 
@@ -144,6 +153,14 @@ So I can browse for my mood 🥳
   </div>
   
 ![Untitled Workspace (24)](https://user-images.githubusercontent.com/92258765/146653859-5c2e3aa4-9c39-4393-b1e0-b48737c1d007.jpg)
+
+
+### Callback Events
+
+Prop | Description
+---- | -----------
+onPlay | Called when episode is started
+onPause | Called when episode is paused
 
 # Design :
 

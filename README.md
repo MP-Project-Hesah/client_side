@@ -62,6 +62,9 @@
   
 ## Strategy
 
+###  Project philosophy
+*An application that allows you to create a podcast and publish it on your own page and share it with whoever you want, it also allows you to listen to other podcasts.*
+
 ### The Vision/Goals
 *The Goal of the podcast, which gets its name from the combination of the word iPod (a device used to play audio files), and the word Broadcast, which means broadcasting, is to be a digital broadcast that is easy to listen to anywhere.*
 
@@ -159,7 +162,10 @@ So I can browse for my mood 🥳
 
 <img width="773" alt="2" src="https://user-images.githubusercontent.com/92258765/146648894-0e8ee26d-b421-4ea6-b76e-1d55d13a8b54.png">
 <img width="776" alt="5" src="https://user-images.githubusercontent.com/92258765/146651510-5b0381ee-a2bb-44b9-9ce2-c750cbc09c11.png">
-  
+<img width="776" alt="6" src="https://user-images.githubusercontent.com/92258765/146676537-b45788f0-050f-401f-9f34-e8512ff418c0.png">
+<img width="775" alt="7" src="https://user-images.githubusercontent.com/92258765/146677130-563c1d90-568d-4e76-a2e9-93d015330d3f.png">
+<img width="777" alt="8" src="https://user-images.githubusercontent.com/92258765/146677315-c7d77c7a-72ca-48c0-87f2-b7df39c6ad95.png">
+
 </div>
 
 <div align="center">

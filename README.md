@@ -3,7 +3,9 @@
 
   
  <div align="center">
-  <h1> <hr>  Podcaster   </h1>
+  <h1>   Podcaster <hr>  </h1>
+	
+![d54afdd5c8987ee58bf6062e0e3864f8](https://user-images.githubusercontent.com/92258765/146721818-8f7af28d-e90d-4e9c-babc-eeebbccce53a.gif)
 
 
 ![feeabaa902a640ea8044960e9d57fa7f](https://user-images.githubusercontent.com/92258765/146695855-889e4379-874e-4bee-9745-f19efb41dff9.gif)

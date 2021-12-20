@@ -3,7 +3,7 @@
 
   
  <div align="center">
-  <h1>   Podcaster <hr>  </h1>
+  <h1>    <hr> Podcaster  </h1>
 	
 ![d54afdd5c8987ee58bf6062e0e3864f8](https://user-images.githubusercontent.com/92258765/146721818-8f7af28d-e90d-4e9c-babc-eeebbccce53a.gif)
 

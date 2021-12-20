@@ -1,18 +1,27 @@
-# client_side
 
 
 
   
  <div align="center">
-  <h1>  Podcaster 🎙️ </h1>
-  
-![image](https://user-images.githubusercontent.com/92258765/146139080-8decd398-7c48-45e5-9307-2aa963d4b5a2.png)
-  <br />
+  <h1> <hr>  Podcaster   </h1>
+
+
+![feeabaa902a640ea8044960e9d57fa7f](https://user-images.githubusercontent.com/92258765/146695855-889e4379-874e-4bee-9745-f19efb41dff9.gif)
+
+ 
    
 </div>
+ 
 
-<hr>
-  
+<div align="center">
+  <h1>  <hr></h1>
+ 
+## Quick Links 
+ ### * [**My Slides**](https://www.slides.com)
+### * [**My Heorku** ](https://dashboard.heroku.com/)
+### * [**Clien side github**](https://github.com/MP-Project-Hesah/client_side)
+
+### * [**Trello**](https://trello.com/b/n9ol3PtC/frontendbackend)  
 ### 🛠 &nbsp;Tech Stack
 
 
@@ -23,56 +32,68 @@
 ![HTML](https://img.shields.io/badge/-HTML-05122A?style=flat&logo=HTML5)&nbsp;
 ![CSS](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=CSS3&logoColor=1572B6)&nbsp;
 ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)&nbsp;
-![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)&nbsp;
-![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
+![GitHub](https://img.shields.io/badge/-GitHub-4EA94B?style=flat&logo=github)&nbsp;
+![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=4EA94B)&nbsp;
+![MongoDB](https://img.shields.io/badge/MongoDB-black?style=for-the-badge&logo=mongodb&logoColor=4EA94B)&nbsp;
 
 
-
-## Frameworks & Libraries
+### Frameworks & Libraries
+	
 <p>
    <a href="#"><img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white"></a>
 </p>
 
-## Operating Systems
+### Operating Systems
 <p>
 	<a href="#"><img alt="Windows" src="https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white"></a>
-	
+
+<a href="#"><img alt="Windows" src="https://img.shields.io/badge/Huawei-FF0000?style=for-the-badge&logo=huawei&logoColor=white"></a>
+
 </p>
 
-## Browsers
+### Browsers
 <p>
 	<a href="#"><img alt="Chrome" src="https://img.shields.io/badge/Google_chrome-4285F4?logo=Google-Chrome&logoColor=white"></a>
 	<a href="#"><img alt="Safari" src="https://img.shields.io/badge/Safari-FF1B2D?logo=Safari&logoColor=white"></a>
 	<a href="#"><img alt="Edge" src="https://img.shields.io/badge/Microsoft_Edge-0078D7?logo=Microsoft-edge&logoColor=white"></a>
 </p>
 
-## Databases and Cloud hosting
+### Databases and Cloud hosting
 
 <p>
-    <a href="#"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-%23327FC7.svg?logo=github&logoColor=white"></a>
-    <a href="#"><img alt="Heroku" src="https://img.shields.io/badge/Heroku%20-%23430098.svg?logo=heroku&logoColor=white"></a>
-    <a href="#"><img alt="Heroku" src="https://img.shields.io/badge/Xampp%20-%23430098.svg?logo=xampp&logoColor=white"></a>
+    <a href="#"><img alt="Heroku" src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"></a>
+    <a href="#"><img alt="Netlify" src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"></a>
 </p> 
 
+### Development tools 
+
+<a href="#"><img alt="Edge" src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white"></a>
+<a href="#"><img alt="Edge" src="https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white"></a>
+	
+### Communication tools:
+
+<a href="#"><img alt="Edge" src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"></a>
+<a href="#"><img alt="Edge" src="https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white"></a>
+
+</div>
 
 
 <div align="center">
-  <h1> UX | User Experience</h1>
-  </div>
+  <h1>  <hr> UX | User Experience <hr></h1>
+ 
+ </div>
   
-## Strategy
+## *Strategy* 
 
-###  Project philosophy
+###  Project Philosophy
 *An application that allows you to create a podcast and publish it on your own page and share it with whoever you want, it also allows you to listen to other podcasts.*
 
 ### The Vision/Goals
 *The Goal of the podcast, which gets its name from the combination of the word iPod (a device used to play audio files), and the word Broadcast, which means broadcasting, is to be a digital broadcast that is easy to listen to anywhere.*
 
-###  Project philosophy
-*An application that allows you to create a podcast and publish it on your own page and share it with whoever you want, it also allows you to listen to other podcasts.*
 
 
-## Discovery 
+## *Discovery* 
 
 
 
@@ -128,7 +149,14 @@ So I can browse for my mood 🥳
 * Create podcast
 * Record episode
 * Play the episode in background.
-* 
+* Add background music.
+
+### Callback Events
+
+Prop | Description
+---- | -----------
+onPlay | Called when episode is started
+onPause | Called when episode is paused
 
 ![Untitled Workspace (22)](https://user-images.githubusercontent.com/92258765/146632196-e13f9afb-ed81-4c9a-9b59-d087df7d09a9.jpg)
 
@@ -148,22 +176,13 @@ So I can browse for my mood 🥳
 ![Untitled Workspace (13)](https://user-images.githubusercontent.com/92258765/146556069-05fdd93c-3891-4c74-b105-04a64947a65a.jpg)
 
 
+
+
+
+
 <div align="center">
-  <h1> ER Model Digram</h1>
+  <h1> Design </h1>
   </div>
-  
-![Untitled Workspace (24)](https://user-images.githubusercontent.com/92258765/146653859-5c2e3aa4-9c39-4393-b1e0-b48737c1d007.jpg)
-
-
-### Callback Events
-
-Prop | Description
----- | -----------
-onPlay | Called when episode is started
-onPause | Called when episode is paused
-
-# Design :
-
 
 <div align="center">
   <h1> Site-map Digram</h1>
@@ -186,7 +205,7 @@ onPause | Called when episode is paused
 </div>
 
 <div align="center">
-  <h1> UI | User Interface</h1>
+  <h1><hr> UI | User Interface <hr></h1>
   </div>
   
 ## Interface Design

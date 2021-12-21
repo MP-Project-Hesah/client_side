@@ -110,22 +110,24 @@ So that I can make it big! 🥳
 * As a user you can edit a Profile :
     * user can create bio or "small description about yourself"
     * user can add photo in ur profile 
-    * user can follow other podcaster 
+    * user can suscribe with podcast
+    * If the user subscribes to the podcast, a notification will come every time a new episode of this podcast comes.
     * user can update bio
+    * user can update his avatar
 * User Should be have account to :
-   * Create new project , user must follow these steps when create a new project :
+   * Create new podcast :
        * Name of Podcast
        * Category of this podcast
-       * Start Record
+       * Upload the episode from device
        * user can add cover Photo to his Podcasts
-       * As a user u can add music to ur record (Start music + end music ) > (after u finish record step)
+       * As a user u can add music to your episode
        * Publish in home page  
    * Share podcast with friends
    * Write a comment to other podcast 
  * As a admin you can Delete user > manage 
  * As a user  you can listining podcast as u like 
  * As a user you can search any podcast u want .
- * As a user & guest you can choose Dark / light Mode 
+ * As a user listener & creator you can choose Dark / light Mode 
  
  <h2> Part 2 : </h2>
  

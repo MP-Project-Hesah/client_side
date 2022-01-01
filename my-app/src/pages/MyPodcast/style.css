@@ -1,0 +1,22 @@
+.dark .recent_activity {
+	min-height: 1px;
+	height: 100%;
+}
+
+.my-podcast-container {
+	max-height: calc(100vh - 140px);
+	overflow: auto;
+}
+
+.my-podcast-container::-webkit-scrollbar {
+	width: 7px;
+}
+
+.my-podcast-container::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+.my-podcast-container::-webkit-scrollbar-thumb {
+	background: #8961de;
+	border-radius: 10px;
+}

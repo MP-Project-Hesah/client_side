@@ -1,0 +1,48 @@
+.table > :not(:last-child) > :last-child > * {
+	border-bottom-color: transparent !important;
+}
+
+.img-size {
+	height: 35px;
+	width: 35px;
+}
+
+td {
+	vertical-align: middle;
+}
+
+input {
+	outline: none;
+}
+
+.search-icon {
+	left: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.table-hover > tbody > tr:hover {
+	color: #929292;
+}
+
+.table_container {
+	overflow-x: auto;
+	min-width: 100% !important;
+}
+
+.dark .table_container .bg-light {
+	background-color: #212121 !important;
+}
+
+.dark input.bg-light {
+	background-color: #212121 !important;
+}
+
+.dark .table_container .border {
+	border: 1px solid #dee2e673 !important;
+}
+
+.table_container table {
+	width: 100%;
+	min-width: 700px !important;
+}

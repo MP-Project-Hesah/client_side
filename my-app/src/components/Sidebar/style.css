@@ -1,0 +1,467 @@
+.light .sidebar_container {
+	z-index: 10;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	height: 100vh;
+	background: #ffffff;
+	-webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.08);
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+.light .sidebar_container .top_side {
+	border-bottom: 2px solid #ebeff2;
+	height: 75px;
+}
+
+.light .sidebar_container a {
+	text-decoration: none;
+}
+
+.light .sidebar_container a div {
+	padding-left: 0.6rem;
+	height: 45px;
+	color: #90a0b7;
+	border-radius: 5px;
+	-webkit-transition: 0.1s;
+	transition: 0.1s;
+}
+
+.light .sidebar_container a div p {
+	padding-left: 2rem;
+}
+
+.light .sidebar_container a div .img1::before {
+	content: url(../../assets/overview.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a div .img2::before {
+	content: url(../../assets/user.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a div .img3::before {
+	content: url(../../assets/payment.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a div .img4::before {
+	content: url(../../assets/release.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a div .img5::before {
+	content: url(../../assets/setting.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a:hover div {
+	color: #fff;
+	background: #8961de;
+}
+
+.light .sidebar_container a:hover div .img1::before {
+	content: url(../../assets/overviewA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a:hover div .img2::before {
+	content: url(../../assets/userA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a:hover div .img3::before {
+	content: url(../../assets/paymentA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a:hover div .img4::before {
+	content: url(../../assets/releaseA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container a:hover div .img5::before {
+	content: url(../../assets/settingA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container .activeNav div {
+	background: #8961de;
+	color: #fff;
+}
+
+.light .sidebar_container .activeNav div .img1::before {
+	content: url(../../assets/overviewA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container .activeNav div .img2::before {
+	content: url(../../assets/userA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container .activeNav div .img3::before {
+	content: url(../../assets/paymentA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container .activeNav div .img4::before {
+	content: url(../../assets/releaseA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.light .sidebar_container .activeNav div .img5::before {
+	content: url(../../assets/settingA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container {
+	z-index: 10;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	height: 100vh;
+	background: #181818;
+	-webkit-box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.08);
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dark .sidebar_container .top_side {
+	border-bottom: 2px solid rgba(235, 239, 242, 0.08);
+	height: 75px;
+}
+
+.dark .sidebar_container a {
+	text-decoration: none;
+}
+
+.dark .sidebar_container a div {
+	padding-left: 0.6rem;
+	height: 45px;
+	color: #54555f;
+	border-radius: 5px;
+	-webkit-transition: 0.1s;
+	transition: 0.1s;
+}
+
+.dark .sidebar_container a div p {
+	padding-left: 2rem;
+}
+
+.dark .sidebar_container a:hover div {
+	color: #fff;
+	background: #8961de;
+}
+
+.dark .sidebar_container a:hover div .img1::before {
+	content: url(../../assets/overviewA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container a:hover div .img2::before {
+	content: url(../../assets/userA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container a:hover div .img3::before {
+	content: url(../../assets/paymentA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container a:hover div .img4::before {
+	content: url(../../assets/releaseA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container a:hover div .img5::before {
+	content: url(../../assets/settingA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container .activeNav div {
+	background: #8961de;
+	color: #fff;
+}
+
+.dark .sidebar_container .activeNav div .img1::before {
+	content: url(../../assets/overviewA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container .activeNav div .img2::before {
+	content: url(../../assets/userA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container .activeNav div .img3::before {
+	content: url(../../assets/paymentA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+.dark .sidebar_container .activeNav div .img4::before {
+	content: url(../../assets/releaseA.svg);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	top: 27%;
+}
+
+@media screen and (min-width: 1400px) {
+	.sidebar_container {
+		width: 270px;
+	}
+	.hamb {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.sidebar_container {
+		position: absolute;
+		z-index: 1;
+	}
+	.sidebarActive {
+		width: 270px;
+		overflow: auto;
+	}
+	.nonActiveSidebar {
+		width: 0px;
+		overflow: hidden;
+	}
+}

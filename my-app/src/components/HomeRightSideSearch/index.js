@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 const HomeRightSideSearch = () => {
 	return (
@@ -13,10 +14,11 @@ const HomeRightSideSearch = () => {
 				/>
 			</div>
 			<br />
+
 			<div className="px-4">
 				<ol>
 					{[1, 1, 1, 1, 1].map(() => {
-						return <li className="py-1 color3">This is </li>;
+						return <li className="py-1 color3">Lorem ipsum dolor sit amet</li>;
 					})}
 				</ol>
 			</div>

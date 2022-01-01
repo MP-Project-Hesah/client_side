@@ -1,0 +1,109 @@
+.light .login_container .login_form {
+	max-width: 392px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 5px;
+	border: 1px solid #f0f0f0;
+}
+
+.light .login_container .login_form label {
+	color: #3b3b3b;
+}
+
+.light .login_container .login_form input {
+	background: rgba(235, 239, 242, 0.35);
+	border: 1px solid #ebeff2;
+	border-radius: 5px;
+	height: 38px;
+	color: #3b3b3b;
+}
+
+.light .login_container .login_form input::-webkit-input-placeholder {
+	color: #90a0b7;
+}
+
+.light .login_container .login_form input:-ms-input-placeholder {
+	color: #90a0b7;
+}
+
+.light .login_container .login_form input::-ms-input-placeholder {
+	color: #90a0b7;
+}
+
+.light .login_container .login_form input::placeholder {
+	color: #90a0b7;
+}
+
+.light .login_container .login_form input:focus {
+	outline: none;
+}
+
+.light .login_container .login_form .eye {
+	position: absolute;
+	top: 56%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 0.5rem;
+	color: #90a0b7;
+}
+
+.light .login_container .login_form button {
+	height: 38px;
+	border-radius: 5px;
+	background-color: #8961de;
+}
+
+.dark .login_container .login_form {
+	max-width: 392px;
+	width: 100%;
+	border-radius: 5px;
+	background-color: #181818;
+	border: 1px solid #222222;
+}
+
+.dark .login_container .login_form label {
+	color: #54555f;
+}
+
+.dark .login_container .login_form input {
+	background: rgba(41, 41, 41, 0.35);
+	border: 1px solid #292929;
+	color: #54555f;
+	border-radius: 5px;
+	height: 38px;
+}
+
+.dark .login_container .login_form input::-webkit-input-placeholder {
+	color: #54555f;
+}
+
+.dark .login_container .login_form input:-ms-input-placeholder {
+	color: #54555f;
+}
+
+.dark .login_container .login_form input::-ms-input-placeholder {
+	color: #54555f;
+}
+
+.dark .login_container .login_form input::placeholder {
+	color: #54555f;
+}
+
+.dark .login_container .login_form input:focus {
+	outline: none;
+}
+
+.dark .login_container .login_form .eye {
+	position: absolute;
+	top: 56%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 0.5rem;
+	color: #54555f;
+}
+
+.dark .login_container .login_form button {
+	height: 38px;
+	border-radius: 5px;
+	background-color: #8961de;
+}

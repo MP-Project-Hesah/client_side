@@ -1,0 +1,9 @@
+.light .search_type {
+	height: 44px;
+}
+
+.dark .search_type {
+	height: 44px;
+	background-color: rgba(221, 221, 221, 0.103);
+	color: #949494;
+}

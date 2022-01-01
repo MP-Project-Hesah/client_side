@@ -9,4 +9,3 @@ ReactDOM.render(
 	</Route>,
 	document.getElementById("root")
 );
-//

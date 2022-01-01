@@ -1,0 +1,106 @@
+.light .login_container {
+	background-color: #fafafa;
+	height: 100vh;
+	width: 100%;
+	padding: 0rem 1.5rem;
+}
+
+.light .login_container .footer_container {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	font-size: 0.8rem;
+}
+
+.light .login_container .create_account_btn {
+	position: absolute;
+	right: 5%;
+	top: 5%;
+}
+
+.light .login_container .create_account_btn button {
+	font-size: 14px;
+	padding: 0.4rem;
+	border: 1px solid #444444;
+	background-color: transparent;
+	border-radius: 4px;
+	color: #3b3b3b;
+	-webkit-box-shadow: 1px 1px 10px #c2cfe0;
+	box-shadow: 1px 1px 10px #c2cfe0;
+}
+
+.dark .login_container .create_account_btn {
+	position: absolute;
+	right: 5%;
+	top: 5%;
+}
+
+.dark .login_container .create_account_btn button {
+	font-size: 14px;
+	padding: 0.4rem 0.8rem;
+	border: 1px solid #3b3b3b;
+	background-color: #181818;
+	border-radius: 4px;
+	color: #444444;
+	-webkit-box-shadow: 1px 1px 10px #747474;
+	box-shadow: 1px 1px 10px #747474;
+}
+
+.dark .login_container .footer_container {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	font-size: 0.8rem;
+	color: #444444;
+}
+
+.dark .login_container {
+	background-color: #74747400;
+	height: 100vh;
+	width: 100%;
+	padding: 0rem 1.5rem;
+}
+
+.dark .login_container h4 {
+	color: #fff;
+}
+
+.dark .login_container .create_account_btn {
+	position: absolute;
+	right: 5%;
+	top: 5%;
+}
+
+.dark .login_container .create_account_btn button {
+	font-size: 14px;
+	padding: 0.4rem 0.8rem;
+	border: 1px solid #3b3b3b;
+	background-color: #181818;
+	border-radius: 4px;
+	color: #444444;
+	-webkit-box-shadow: 1px 1px 10px #747474;
+	box-shadow: 1px 1px 10px #74747431;
+}
+
+.dark .login_container .footer_container {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	font-size: 0.8rem;
+	color: #444444;
+}
+
+.light .login_container .footer_container {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	font-size: 0.8rem;
+}

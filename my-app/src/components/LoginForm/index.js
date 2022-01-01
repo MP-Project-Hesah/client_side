@@ -1,9 +1,9 @@
 import React from "react";
 import { MdRemoveRedEye } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import "./style.css";
 
 const LoginForm = ({ signin, setSignInUp }) => {
-
 	return (
 		<div className="login_form shadow-sm pb-4">
 			<div className="container-fluid">
@@ -21,7 +21,7 @@ const LoginForm = ({ signin, setSignInUp }) => {
 						<input
 							className="w-100 px-3 mt-1 f14"
 							type="email"
-							placeholder="Hessah@gmail.com"
+							placeholder="Hesah@gmail.com"
 						/>
 						<br />
 						<br />

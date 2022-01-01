@@ -1,0 +1,20 @@
+.profile-container {
+	height: 90vh;
+	overflow: auto;
+}
+
+.bg-banner {
+	max-height: 400px;
+	object-fit: cover;
+}
+
+.avtar {
+	height: 250px;
+	width: 250px;
+	object-fit: cover;
+	box-shadow: 1px 1px 10px rgb(92, 92, 92);
+}
+
+.profile-content {
+	margin-top: -12rem;
+}

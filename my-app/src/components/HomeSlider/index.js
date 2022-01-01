@@ -1,17 +1,16 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "./style.css";
 
 // import Swiper core and required modules
-//Swiper package contains different sets of CSS, Less and SCSS styles:
-// swiper/css - only core Swiper styles
-// swiper/css/bundle - all Swiper styles including all modules styles (like Navigation, Pagination, etc.
-// import SwiperCore, { Navigation } from "swiper";
+import SwiperCore, { Navigation } from "swiper";
 
 // Import Swiper styles
-// import "swiper/swiper-bundle.min.css";
-// import "swiper/swiper.min.css";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+
 // configure Swiper to use modules
-// SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation]);
 
 const HomeSlider = () => {
 	const sldierImages = [
@@ -21,6 +20,7 @@ const HomeSlider = () => {
 		"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
 		"https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
 	];
+
 	return (
 		<Swiper navigation={true}>
 			{sldierImages.map((item, i) => {

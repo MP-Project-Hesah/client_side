@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import "./style.css";
 
 // COMPONENTS
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../../components/LoginForm";
 
 const Login = () => {
 	const [signInUp, setSignInUp] = useState(false);
+
 	return (
 		<div className="login_container d-flex justify-content-center align-items-center">
 			<div className="create_account_btn position-absolute">
@@ -24,5 +26,6 @@ const Login = () => {
 			<div className="footer_container">© Country Limited</div>
 		</div>
 	);
-}; 
+};
+
 export default Login;

@@ -1,0 +1,18 @@
+.swiper-slide {
+	height: 350px !important;
+	border-radius: 8px;
+}
+
+.swiper-slide img {
+	height: 350px !important;
+	border-radius: 8px;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.light .swiper-button-next:after,
+.light .swiper-button-prev:after,
+.dark .swiper-button-next:after,
+.dark .swiper-button-prev:after {
+	color: #8961de;
+}

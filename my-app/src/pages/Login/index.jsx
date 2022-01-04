@@ -4,7 +4,7 @@ import "./style.css";
 // COMPONENTS
 import LoginForm from "../../components/LoginForm";
 
-const Login = () => {
+const Login = ({history}) => {
 	const [signInUp, setSignInUp] = useState(false);
 
 	return (
@@ -13,13 +13,13 @@ const Login = () => {
 				{(signInUp && (
 					<button onClick={() => setSignInUp(false)}>Have an account</button>
 				)) || (
-					<button onClick={() => setSignInUp(true)}>Create an account</button>
-				)}
+						<button onClick={() => setSignInUp(true)}>Create an account</button>
+					)}
 			</div>
 
 			{/* LOGIN FORM START */}
-			{(signInUp && <LoginForm setSignInUp={setSignInUp} />) || (
-				<LoginForm signin />
+			{(signInUp && <LoginForm setSignInUp={setSignInUp} history={history} />) || (
+				<LoginForm signin history={history} />
 			)}
 			{/* LOGIN FORM END */}
 

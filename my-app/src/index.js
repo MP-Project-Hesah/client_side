@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { BrowserRouter as Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { AuthProvider } from "./Context/auth.context";
 
 ReactDOM.render(
-	<Route>
-		<App />
-	</Route>,
+	<AuthProvider>
+	<Router>
+		<Suspense fallback={<div>loading</div>}>
+			<App />
+		</Suspense>
+	</Router>
+	</AuthProvider>,
 	document.getElementById("root")
 );

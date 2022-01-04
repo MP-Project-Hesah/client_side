@@ -1,23 +1,34 @@
 
 
+ ![30c4708468d108046b09feae6fee4eb1](https://jf-staeulalia.pt/img/other/05/collection-fancy-line-6.jpg)
 
-  
+
+
+ 
  <div align="center">
-  <h1>    Podcaster  </h1>
-
+  <h1>    PODIFY  </h1>
+	
 ### Quick Links   
-		   
+ 🦋
+	
  [**My Slides**](https://www.slides.com)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Demo** ](https://dashboard.heroku.com/)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Server side**](https://github.com/MP-Project-Hesah/server_side)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [**Trello**](https://trello.com/b/n9ol3PtC/frontendbackend) 
 
-![d54afdd5c8987ee58bf6062e0e3864f8](https://user-images.githubusercontent.com/92258765/146721818-8f7af28d-e90d-4e9c-babc-eeebbccce53a.gif)
 
 
-   
+![30c4708468d108046b09feae6fee4eb1](https://64.media.tumblr.com/3f4819524281397f50852d7bbba9dd99/a4024b377f5c2193-59/s1280x1920/4858ffdbb8e8968f63928cacfc5a273b95b9866e.gifv)
+
+	
+![30c4708468d108046b09feae6fee4eb1](https://user-images.githubusercontent.com/92258765/147934175-4131b982-272f-4a15-a428-e488d58a83e7.gif)
+	
+	
+
 </div>
  
 
 <div align="center">
   <h1>  <hr></h1>
+
+![30c4708468d108046b09feae6fee4eb1](https://www.theeagleinn.com/wp-content/uploads/2017/11/stacked_page_divider_image-1378934968-tapestry-d.png)
 
 
 
@@ -78,8 +89,11 @@
 
 
 <div align="center">
-  <h1>  <hr> UX | User Experience <hr></h1>
- 
+  <h1>  <hr> UX | User Experience </h1>
+	
+![30c4708468d108046b09feae6fee4eb1](https://www.theeagleinn.com/wp-content/uploads/2017/11/stacked_page_divider_image-1378934968-tapestry-d.png)
+
+
  </div>
   
 ## *Strategy* 
@@ -209,14 +223,45 @@ onPause | Called when episode is paused
   <h1><hr> UI | User Interface <hr></h1>
   </div>
   
-## Interface Design
-
+## Interface Design 
 
 ### Layout and Responsivenss
 
+### Prototyping
+
+**Home Page**
+
+<img width="1061" alt="ui home page" src="https://user-images.githubusercontent.com/92258765/147919863-c6497431-3b5e-4290-8f4e-0e93a45a5af0.png">
+
+<img width="1053" alt="light home" src="https://user-images.githubusercontent.com/92258765/147923085-e58550a3-9a7e-41d6-8201-b494dbcd8029.png">
+
+**My podcast Page**
+
+<img width="1074" alt="ui my podcast page" src="https://user-images.githubusercontent.com/92258765/147919990-dca93c40-2486-47c3-bfae-39f4dff49c73.png">
+ 
+ **new podcast page**
+ 
+ <img width="1074" alt="light podcast" src="https://user-images.githubusercontent.com/92258765/147926847-02e88e65-cc0c-413a-80e9-f840af296bee.png">
+
+<img width="1073" alt="new podcast dark" src="https://user-images.githubusercontent.com/92258765/147926871-7cc09114-2629-4a3f-9c2a-0411496d6f50.png">
+
+
+ **Admin page** 
+ 
+<img width="1052" alt="ui admin page" src="https://user-images.githubusercontent.com/92258765/147920181-db485773-102d-434d-91ec-59382445e492.png">
+
+**Profile Page**
+<img width="1062" alt="profile page ui" src="https://user-images.githubusercontent.com/92258765/147920621-58512e07-74ca-4a37-9d70-acb1e03a4fed.png">
+
+***Dark Mode***
+
+<img width="1058" alt="light profile" src="https://user-images.githubusercontent.com/92258765/147922135-dec28d10-e295-428f-8ec4-a01264ddc235.png">
+
+**new Episode**
+
 
 ### Icons & Visual Style 
-### Prototyping
+
 
 
 

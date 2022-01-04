@@ -6,22 +6,29 @@ import { BiExit } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { BsFillBellFill } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./style.css";
+import { useAuthContext } from "../Context/auth.context";
 
 const Layout = ({ children, setMode, mode, localMode }) => {
-	useEffect(() => {}, [localMode, mode]);
-
+	useEffect(() => { }, [localMode, mode]);
+	const { logout,isAuthenticated } = useAuthContext()
 	const [sideBar, setSideBar] = useState(false);
-
 	const [activeNav, setActiveNav] = useState(0);
-	const navigations = ["Home", "New Podcast", "Shuffle Podcast", "About us"];
+
+	const navigations = [
+		// {"Home", "New Podcast", "Shuffle Podcast", "About us"},
+		{ name: "Home", url: "/dashboard" },
+		{ name: "New Podcast", url: "/newPodcast" },
+		{ name: "Shuffle Podcast", url: "/shufflePodcast" },
+		{ name: "About us", url: "/aboutUs" },
+	];
 
 	return (
 		<div className="layout_container d-flex">
-			<Sidebar sideBar={sideBar} setSideBar={setSideBar} />
+			{isAuthenticated && <Sidebar sideBar={sideBar} setSideBar={setSideBar} />}
 			<div className="right_side">
-				<div className="header_container shadow-sm d-flex justify-content-between align-items-center px-4 w-100">
+				{isAuthenticated &&<div className="header_container shadow-sm d-flex justify-content-between align-items-center px-4 w-100">
 					<div className="d-flex align-items-center">
 						<GiHamburgerMenu
 							onClick={() => setSideBar(!sideBar)}
@@ -31,15 +38,16 @@ const Layout = ({ children, setMode, mode, localMode }) => {
 						<ul className="d-none d-md-flex align-items-center ms-4 mb-0 list-unstyled">
 							{navigations.map((prev, i) => {
 								return (
+
 									<li
 										onClick={() => setActiveNav(i)}
-										className={`${
-											activeNav === i && "text-decoration-underline"
-										} ms-4 pointer color5`}
+										className={`${activeNav === i && "text-decoration-underline"
+											} ms-4 pointer color5`}
 										key={i}
 									>
-										{prev}
+										<Link to={`${prev.url}`} className="text-decoration-none color5">{prev.name}</Link>
 									</li>
+
 								);
 							})}
 						</ul>
@@ -57,16 +65,16 @@ const Layout = ({ children, setMode, mode, localMode }) => {
 									alt="star"
 								/>
 							)) || (
-								<img
-									onClick={() => {
-										setMode(1);
-										localStorage.setItem("modeLocal", 1);
-									}}
-									className="star_light pointer"
-									src={sun}
-									alt="star"
-								/>
-							)}
+									<img
+										onClick={() => {
+											setMode(1);
+											localStorage.setItem("modeLocal", 1);
+										}}
+										className="star_light pointer"
+										src={sun}
+										alt="star"
+									/>
+								)}
 							<BsFillBellFill
 								className="ms-0 ms-md-3 pointer"
 								fontSize="1.8rem"
@@ -78,15 +86,14 @@ const Layout = ({ children, setMode, mode, localMode }) => {
 								color="#3b3b3b"
 							/>
 						</div>
-						<NavLink to="/">
-							<BiExit
-								className="ms-0 ms-md-3 pointer"
-								fontSize="2rem"
-								color="#3b3b3b"
-							/>
-						</NavLink>
+						<BiExit
+							className="ms-0 ms-md-3 pointer"
+							fontSize="2rem"
+							color="#3b3b3b"
+							onClick={()=>logout()}
+						/>
 					</div>
-				</div>
+				</div>}
 				{/* CHILDREN */}
 				{children}
 			</div>

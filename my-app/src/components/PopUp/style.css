@@ -1,0 +1,44 @@
+.pop-up-container {
+	position: fixed;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.425);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+}
+
+.inner-pop-up {
+	box-shadow: 1px 1px 10px rgb(121, 121, 121);
+	background-color: #fff;
+	max-width: 500px;
+}
+
+.pop-up-body {
+	padding: 0rem 1rem 1rem 1rem;
+}
+
+.form-control:focus {
+	border-color: #8961de;
+	box-shadow: 0 0 0 0.25rem #8961de56;
+}
+
+.dark .pop-up-container {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark .inner-pop-up {
+	box-shadow: 1px 1px 10px #000;
+	background-color: rgb(26, 26, 26);
+	max-width: 500px;
+}
+
+.dark .inner-pop-up input,
+.dark .inner-pop-up textarea {
+	background-color: rgb(37, 37, 37);
+}

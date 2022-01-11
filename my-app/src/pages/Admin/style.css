@@ -46,3 +46,6 @@ input {
 	width: 100%;
 	min-width: 700px !important;
 }
+button:disabled{
+cursor:not-allowed;
+}

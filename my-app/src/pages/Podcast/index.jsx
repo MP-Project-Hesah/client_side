@@ -3,35 +3,94 @@ import "./style.css";
 import PopUp from "../../components/PopUp";
 import api from "../../utils/api";
 import { useAuthContext } from "../../Context/auth.context";
-
-const Podcast = ({ history }) => {
+import moment from 'moment'; // moment is used for converting time and show current time
+// default image
+const noImage = "https://cdn.dribbble.com/users/2199928/screenshots/11532918/media/5a7273b592ea860e6d0ff2931ecab4f3.png?compress=1&resize=400x300";
+const Podcast = ({ match: { params: { id } } }) => {
 	const [popup, setPopup] = useState(false);
 	const [item, setItem] = useState(null);
-	const { logout } = useAuthContext();
-	useEffect({
-		// getpodCastInfo();
+	const [comment, setComment] = useState([]);
+	const [episode, setEpisode] = useState([]);
+	const [ncomment, setncomment] = useState('');
+	const [show, setShow] = useState(false)
+	const { logout, user } = useAuthContext();
+
+	useEffect(() => {
+		getpodCastInfo(); // get podcast detail data from server
+		podcastView(); // user view the podcast 
 	}, [])
-	const getpodCastInfo = () => {
-		api.get('').then(({ data }) => {
-			setItem(data);
+	useEffect(() => {
+		// check the current user owner of the podcast or not and show add episode button
+	//	هل هذا اليوزر هو صاحب البودكاست? عشان يوريني ىيو ايبسود
+		if (item && (user.id === item.userId)) {
+			setShow(true);
+		}
+	}, [item]);
+	const podcastView = () => {
+		api.get(`/podcast/view/${id}`).then(({ data }) => {
+			console.log(data);
 		}).catch(error => {
+			// check error and alert msg
 			if (error && error.response && (error.response.status === 400 || error.response.status === 403 || error.response.status === 404)) {
 				alert(error.response.data)
 			} else if (error && error.response && error.response.status === 500) {
 				alert(error.response.data)
 			} else if (error && error.response && error.response.status === 401) {
-				alert(error.response.data)
+				alert(error.response.data);
+				// logout and redirect to login page
 				logout();
 			} else {
 				alert('Network Error!')
 			}
 		})
 	}
+	const getpodCastInfo = () => {
+		api.get(`/podcast/${id}`).then(({ data }) => {
+			setItem(data);
+			setComment(data.comment);
+			setEpisode(data.episode);
+		}).catch(error => {
+			// check error and alert msg
+			if (error && error.response && (error.response.status === 400 || error.response.status === 403 || error.response.status === 404)) {
+				alert(error.response.data)
+			} else if (error && error.response && error.response.status === 500) {
+				alert(error.response.data)
+			} else if (error && error.response && error.response.status === 401) {
+				alert(error.response.data)
+				// logout and redirect to login page
+				logout();
+			} else {
+				alert('Network Error!')
+			}
+		})
+	}
+	const onSubmit = (e) => {
+		e.preventDefault();
+		api.post(`/comment/${id}`, { comment: ncomment }).then(({ data }) => {
+			alert('New comment added!');
+			resetForm();
+			getpodCastInfo();
+		}).catch(error => {
+			// check error and alert msg
+			if (error && error.response && (error.response.status === 400 || error.response.status === 403 || error.response.status === 404)) {
+				alert(error.response.data)
+			} else if (error && error.response && error.response.status === 500) {
+				alert(error.response.data)
+			} else if (error && error.response && error.response.status === 401) {
+				alert(error.response.data);
+				// logout and redirect to login page
+				logout();
+			} else {
+				alert('Network Error!')
+			}
+		})
+	}
+	const resetForm = () => {
+		setncomment('');
+	}
 	return (
 		<div className="profile-container">
-			{popup && <PopUp setPopup={setPopup} />}
-
-			{/* BOTTOM SECTION */}
+			{popup && <PopUp setPopup={setPopup} podcastId={id} getListOfPodcasts={getpodCastInfo} />}
 			<img
 				className="bg-banner w-100"
 				src="https://images.unsplash.com/photo-1528457213615-b42528b7d61e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80"
@@ -45,39 +104,35 @@ const Podcast = ({ history }) => {
 							<div className="col-12 col-md-6">
 								<p className="mb-0 fw-bold">Music:</p>
 								<h1 className="mb-3 color1">
-									Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-									Voluptatum, commodi!
+									{item && item.name}
 								</h1>
 								<p className="color2">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Voluptate numquam labore quidem tempora eos illum
-									reprehenderit omnis dicta consequatur asperiores eligendi
-									possimus quae ab, quia incidunt eveniet! Nostrum, sint
-									adipisci veniam animi quae optio ratione quia quibusdam est
+									{item && item.description}
 								</p>
-								<button
-									onClick={() => setPopup(true)}
-									className="text-white btn bg-purple-dark"
-								>
-									Add new episode
-								</button>
+								{
+									show && <button
+										onClick={() => setPopup(true)}
+										className="text-white btn bg-purple-dark mb-3"
+									>
+										Add new episode
+									</button>
+								}
 							</div>
 							<div className="col-12 col-md-6 ps-0 ps-0 pe-0">
 								<img
 									className="w-100"
-									src="https://images.unsplash.com/photo-1593697909683-bccb1b9e68a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-									alt=""
+									src={item && item.photo}
+									alt="podcast_photo"
 								/>
 							</div>
 						</div>
-
 						<div className="row mt-5">
 							<h1 className="mb-5 color2">Episodes:</h1>
 							<div className="col-sm-10 col-md-8">
 								<div className="row gy-4">
-									{[1, 1, 1, 1, 1, 1, 1].map((item, i) => {
+									{episode.map((item, i) => {
 										return (
-											<div className="col-12 px-4">
+											<div className="col-12 px-4" key={i}>
 												<div className="row shadow rounded-3">
 													<div className="col-3 ps-0">
 														<img
@@ -90,17 +145,19 @@ const Podcast = ({ history }) => {
 														<div className="d-flex justify-content-between align-items-start mt-1">
 															<div>
 																<small className="text-secondary">
-																	Posted on February 25, 2017
+																	Posted on {moment(item.date).format('MMMM DD , YYYY')}
+																	{/* February 25, 2017 */}
+
 																</small>
 																<h5 className="color5 fw-bold">
-																	Lorem, ipsum dolor.
+																	{item.name}
 																</h5>
 															</div>
 															<div className="d-flex align-items-center">
 																<svg
 																	stroke="currentColor"
 																	fill="currentColor"
-																	stroke-width="0"
+																	strokeWidth="0"
 																	viewBox="0 0 448 512"
 																	height="1em"
 																	width="1em"
@@ -114,9 +171,8 @@ const Podcast = ({ history }) => {
 														</div>
 														<audio
 															className="w-100"
-															key={i}
-															src="https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-61905/zapsplat_multimedia_alert_chime_short_musical_notification_cute_child_like_001_64918.mp3?_=1"
-															controls="true"
+															src={item.url}
+															controls={true}
 														></audio>
 													</div>
 												</div>
@@ -130,41 +186,47 @@ const Podcast = ({ history }) => {
 						<div className="row mt-5 pt-5">
 							<h1 className="mb-2 color2">Comments:</h1>
 							<div className="col-sm-10 col-md-8 col-lg-6">
-								<textarea
-									cols={10}
-									type="text"
-									name=""
-									id=""
-									className="form-control bg-input"
-									placeholder="Write your comment here"
-									rows={4}
-								/>
-								<button className=""></button>
+								<form onSubmit={onSubmit}>
+									<textarea
+										cols={10}
+										type="text"
+										name="comment"
+										id="comment"
+										className="form-control bg-input mb-3"
+										placeholder="Write your comment here"
+										rows={4}
+										value={ncomment}
+										onChange={(e) => setncomment(e.target.value)}
+										required
+									/>
+									<div >
+										<button type="submit" className="text-white btn bg-purple-dark mb-3">Add Comment</button>
+									</div>
+								</form>
 								<div className="row gy-4">
-									{[1, 1, 1, 1, 1, 1, 1].map((item, i) => {
+									{comment.map((item, i) => {
 										return (
-											<div className="col-12 px-4">
+											<div className="col-12 px-4" key={i}>
 												<div className="row bg-white shadow rounded-3 py-3">
 													<div className="col-2 pe-0">
 														<img
 															className="w-100 rounded-3 shadow-sm"
-															src="https://cdn.dribbble.com/users/2199928/screenshots/11532918/media/5a7273b592ea860e6d0ff2931ecab4f3.png?compress=1&resize=400x300"
+															src={item.userId.avatar || noImage}
 															alt=""
 														/>
 													</div>
 													<div className="col-10">
 														<div className="d-flex justify-content-between mb-1">
 															<h6 className="color2 text-decoration-underline fw-bold mb-0">
-																Sharton
+																{item.userId.name}
 															</h6>
-															<p className="color2 mb-0">2/2/2019 - 4:30 PM</p>
+															<p className="color2 mb-0">
+																{/* 2/2/2019 - 4:30 PM */}
+																{moment(item.date).format('DD/MM/YYYY - hh:mm A')}
+															</p>
 														</div>
 														<p className="color5 mb-0 f14">
-															"Lorem ipsum, dolor sit amet consectetur
-															adipisicing elit. Veniam ullam, veritatis non
-															repellendus molestias ad vitae perspiciatis quos
-															minima esse beatae, eligendi cum fugiat excepturi
-															et suscipit natus tempora?"
+															{item.comment}
 														</p>
 													</div>
 												</div>

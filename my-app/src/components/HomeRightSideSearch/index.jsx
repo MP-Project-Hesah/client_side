@@ -17,9 +17,9 @@ const HomeRightSideSearch = () => {
 
 			<div className="px-4">
 				<ol>
-					{[1, 1, 1, 1, 1].map(() => {
-						return <li className="py-1 color3">Lorem ipsum dolor sit amet</li>;
-					})}
+					{/* {[1, 1, 1, 1, 1].map((item,index) => {
+						return <li className="py-1 color3" key={index}></li>;
+					})} */}
 				</ol>
 			</div>
 		</div>

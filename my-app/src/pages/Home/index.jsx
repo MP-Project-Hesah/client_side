@@ -4,7 +4,7 @@ import HomeSlider from "../../components/HomeSlider";
 import Subscriptions from "../../components/Subscriptions";
 import TopPodcast from "../../components/TopPodcast";
 
-const Dashboard = ({ localMode }) => {
+const Dashboard = ({ localMode, history }) => {
 	return (
 		<div>
 			{/* BOTTOM SECTION */}
@@ -13,7 +13,7 @@ const Dashboard = ({ localMode }) => {
 					<div className="row gy-4">
 						<div className="col-12 col-xl-8 rounded-3">
 							<HomeSlider />
-							<TopPodcast />
+							<TopPodcast history={history} />
 						</div>
 						<div className="col-12 col-xl-4">
 							<div className="recent_activity">

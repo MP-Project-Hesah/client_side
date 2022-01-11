@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useAuthContext } from "../../Context/auth.context";
 import api from "../../utils/api";
 import "./style.css";
-const noImage = "https://i.stack.imgur.com/y9DpT.jpg"
+import swal from 'sweetalert';
+const noImage = "https://i.stack.imgur.com/y9DpT.jpg";
 const MyPodcast = ({history}) => {
 	const { logout } = useAuthContext();
 	const [name, setName] = useState('');
@@ -14,44 +15,54 @@ const MyPodcast = ({history}) => {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		let that = this;
+		// when uploading image to server using onuploadprogress function in the headers
 		const Config = {
 			onUploadProgress: function (progressEvent) {
 				let percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
 				console.log(percentCompleted)
 			}
 		}
+		// use form data when you are trying to upload image to the server
 		let formData = new FormData();
 		formData.append('name', name);
 		formData.append('description', description);
 		formData.append('category', category);
 		formData.append('photo', image)
+		// calling api to add new podcast
 		api.post('/podcast', formData, Config).then(result => {
-			alert("New podcast added!");
+			swal("New podcast added!");
 			history.push('/dashboard');
 		}).catch(error => {
+			// check error and swal msg
 			if (error && error.response && (error.response.status === 400 || error.response.status === 403 || error.response.status === 404)) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 500) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 401) {
-				alert(error.response.data)
+				swal(error.response.data)
+				// logout and redirect to login page
 				logout();
 			} else {
-				alert('Network Error!')
+				swal('Network Error!')
 			}
 		})
 	}
+	// reset the state
 	const resetForm = () => {
 		setName('');
 		setDescription('');
 	};
+	// handler on image change or select
 	const handleChangeImage = (e) => {
 		e.preventDefault();
 		let file = e.target.files[0];
 		if (file) {
+			// convert image to base64
 			let reader = new FileReader();
 			reader.readAsDataURL(file);
+			// call this function after successfully load image
 			reader.onload = function () {
+				// set base64 image to show to the user
 				setShowImage(reader.result);
 			};
 			reader.onerror = function (error) {

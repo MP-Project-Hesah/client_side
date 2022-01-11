@@ -3,10 +3,11 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
 
 // IMPORTING ROUTER AND SWITCH
-import { Switch, Route } from "react-router-dom";
-import { lazy, useEffect, useState } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
-import { ProtectedRoute } from "./Context/auth.context";
+import { ProtectedRoute, AdminProtectedRoute } from "./Context/auth.context";
+
 import Layout from "./layout";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
@@ -15,11 +16,12 @@ import MyPodcast from "./pages/MyPodcast";
 import NewPodcast from "./pages/NewPodcast";
 import Podcast from "./pages/Podcast";
 import Home from "./pages/Home";
+import Statistics from './pages/statistics';
+
 function App() {
 	const [mode, setMode] = useState(1);
 
 	const location = useLocation().pathname;
-
 	let localMode = localStorage.getItem("modeLocal");
 
 	useEffect(() => {
@@ -46,21 +48,19 @@ function App() {
 			<Switch>
 				{location !== "/" && (
 					<Layout localMode={localMode} mode={mode} setMode={setMode}>
-						<Route exact path="/dashboard" component={ProtectedRoute(Home)}>
+						<Route exact path="/dashboard" component={ProtectedRoute(Home)}> 
 						</Route>
-						<Route exact path="/admin">
-							<Admin />
+						<Route exact path="/admin" component={AdminProtectedRoute(Admin)}>
 						</Route>
-						<Route exact path="/profile">
-							<Profile />
+						<Route exact path="/profile" component={ProtectedRoute(Profile)}>
 						</Route>
 						<Route exact path="/myPodcast" component={ProtectedRoute(MyPodcast)}>
 						</Route>
 						<Route exact path="/newPodcast" component={ProtectedRoute(NewPodcast)}>
 						</Route>
 						<Route exact path="/podcast/:id" component={ProtectedRoute(Podcast)}>
-							
 						</Route>
+						<Route exact path="/statistics" component={ProtectedRoute(Statistics)}></Route>
 					</Layout>
 				)}
 

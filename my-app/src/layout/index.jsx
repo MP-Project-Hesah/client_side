@@ -6,13 +6,14 @@ import { BiExit } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { BsFillBellFill } from "react-icons/bs";
-import { Link, NavLink } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./style.css";
 import { useAuthContext } from "../Context/auth.context";
 
-const Layout = ({ children, setMode, mode, localMode }) => {
+
+const Layout = ({ children, setMode, mode, localMode, history }) => {
 	useEffect(() => { }, [localMode, mode]);
-	const { logout,isAuthenticated } = useAuthContext()
+	const { logout, isAuthenticated } = useAuthContext() // call the context hook
 	const [sideBar, setSideBar] = useState(false);
 	const [activeNav, setActiveNav] = useState(0);
 
@@ -20,23 +21,22 @@ const Layout = ({ children, setMode, mode, localMode }) => {
 		// {"Home", "New Podcast", "Shuffle Podcast", "About us"},
 		{ name: "Home", url: "/dashboard" },
 		{ name: "New Podcast", url: "/newPodcast" },
-		{ name: "Shuffle Podcast", url: "/shufflePodcast" },
 		{ name: "About us", url: "/aboutUs" },
 	];
 
 	return (
 		<div className="layout_container d-flex">
-			{isAuthenticated && <Sidebar sideBar={sideBar} setSideBar={setSideBar} />}
+			{ isAuthenticated && <Sidebar sideBar={sideBar} setSideBar={setSideBar} />}
 			<div className="right_side">
-				{isAuthenticated &&<div className="header_container shadow-sm d-flex justify-content-between align-items-center px-4 w-100">
+				{isAuthenticated && <div className="header_container shadow-sm d-flex justify-content-between align-items-center px-4 w-100">
 					<div className="d-flex align-items-center">
 						<GiHamburgerMenu
 							onClick={() => setSideBar(!sideBar)}
-							fontSize="1.4rem"
+							fontSize="1.9rem"
 							className="pointer hamb color3"
 						/>
 						<ul className="d-none d-md-flex align-items-center ms-4 mb-0 list-unstyled">
-							{navigations.map((prev, i) => {
+				 			{navigations.map((prev, i) => {
 								return (
 
 									<li
@@ -75,22 +75,19 @@ const Layout = ({ children, setMode, mode, localMode }) => {
 										alt="star"
 									/>
 								)}
-							<BsFillBellFill
+							
+							<IoPersonCircleSharp
+								onClick={() => history.push('/profile')}
 								className="ms-0 ms-md-3 pointer"
 								fontSize="1.8rem"
-								color="#3b3b3b"
-							/>
-							<IoPersonCircleSharp
-								className="ms-0 ms-md-3 pointer"
-								fontSize="2.2rem"
 								color="#3b3b3b"
 							/>
 						</div>
 						<BiExit
 							className="ms-0 ms-md-3 pointer"
-							fontSize="2rem"
+							fontSize="1.7rem"
 							color="#3b3b3b"
-							onClick={()=>logout()}
+							onClick={() => logout()}
 						/>
 					</div>
 				</div>}
@@ -101,4 +98,4 @@ const Layout = ({ children, setMode, mode, localMode }) => {
 	);
 };
 
-export default Layout;
+export default withRouter(Layout);

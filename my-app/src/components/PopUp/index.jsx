@@ -3,6 +3,8 @@ import "./style.css";
 import cross from "../../assets/cross.svg";
 import api from "../../utils/api";
 import { useAuthContext } from "../../Context/auth.context";
+import swal from 'sweetalert';
+//pop up for add new episode 
 
 const PopUp = ({ setPopup, podcastId,getListOfPodcasts }) => {
 	const { logout } = useAuthContext()
@@ -23,19 +25,19 @@ const PopUp = ({ setPopup, podcastId,getListOfPodcasts }) => {
 		formData.append('description', description);
 		formData.append('audio', audio)
 		api.post(`/episode/${podcastId}`, formData, Config).then(result => {
-			alert('Episode Added!');
+			swal('Episode Added!');
 			getListOfPodcasts();
 			setPopup(false);
 		}).catch(error => {
 			if (error && error.response && (error.response.status === 400 || error.response.status === 403 || error.response.status === 404)) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 500) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 401) {
-				alert(error.response.data)
+				swal(error.response.data)
 				logout();
 			} else {
-				alert('Network Error!')
+				swal('Network Error!')
 			}
 		})
 

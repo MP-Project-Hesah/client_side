@@ -3,12 +3,13 @@ import { MdRemoveRedEye } from "react-icons/md";
 import api from "../../utils/api";
 import { useAuthContext } from "../../Context/auth.context";
 import "./style.css";
+import swal from 'sweetalert';
 
 const LoginForm = ({ signin, setSignInUp, history }) => {
 	const { login, logout } = useAuthContext();
 
-	const [email, setEmail] = useState('sufyan@gmail.com');
-	const [password, setPassword] = useState('Apple123@');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 	const [gender, setGender] = useState('');
 	const [username, setUserName] = useState('');
@@ -24,7 +25,7 @@ const LoginForm = ({ signin, setSignInUp, history }) => {
 			signIn(body);
 		} else {
 			if (password !== confirmPassword) {
-				alert('Password must match');
+				swal('Password must match');
 				return;
 			}
 			body = {
@@ -39,17 +40,21 @@ const LoginForm = ({ signin, setSignInUp, history }) => {
 	const signIn = (body) => {
 		api.post('/login', body).then(({ data }) => {
 			login(data);
-			history.push('/dashboard');
+			if(data.payload.role==='admin'){
+				history.push('/admin');
+			}else{
+				history.push('/dashboard');
+			}
 		}).catch((error) => {
 			if (error && error.response && (error.response.status === 400 || error.response.status === 403 || error.response.status === 404)) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 500) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 401) {
-				alert(error.response.data)
+				swal(error.response.data)
 				logout();
 			} else {
-				alert('Network Error!')
+				swal('Network Error!')
 			}
 		})
 	}
@@ -57,18 +62,18 @@ const LoginForm = ({ signin, setSignInUp, history }) => {
 		api.post('/register', body).then((result) => {
 			setSignInUp(false);
 			resetForm();
-			alert("Successfully register!");
+			swal( name ,"Successfully register!");
 
 		}).catch((error) => {
 			if (error && error.response && (error.response.status === 400 || error.response.status === 403 || error.response.status === 404)) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 500) {
-				alert(error.response.data)
+				swal(error.response.data)
 			} else if (error && error.response && error.response.status === 401) {
-				alert(error.response.data)
+				swal(error.response.data)
 				logout();
 			} else {
-				alert('Network Error!')
+				swal('Network Error!')
 			}
 		})
 	}
@@ -114,8 +119,7 @@ const LoginForm = ({ signin, setSignInUp, history }) => {
 						<div className="position-relative">
 							<input
 								className="w-100 px-3 mt-1 f14"
-								type="text"
-								placeholder="Password"
+								type="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 								required
@@ -130,14 +134,14 @@ const LoginForm = ({ signin, setSignInUp, history }) => {
 									<label htmlFor="Password">Confirm Password</label>
 									{signin && (
 										<label className="f12 color1 mb-0 fw600 pointer">
-											Forgot password?
+											
 										</label>
 									)}
 								</div>
 								<div className="position-relative">
 									<input
 										className="w-100 px-3 mt-1 f14"
-										type="text"
+										type="password"
 										placeholder="Password"
 										value={confirmPassword}
 										onChange={(e) => setConfirmPassword(e.target.value)}
@@ -217,3 +221,4 @@ const LoginForm = ({ signin, setSignInUp, history }) => {
 };
 
 export default LoginForm;
+

@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 import avt from "../../assets/avt.svg";
 import { FaRegTimesCircle } from "react-icons/fa";
 import "./style.css";
+import { useAuthContext } from "../../Context/auth.context";
 
 const Sidebar = ({ sideBar, setSideBar }) => {
+	const { user } = useAuthContext()
 	useEffect(() => {
 		if (sideBar) {
 			document.body.style.overflow = "hidden";
@@ -18,14 +20,13 @@ const Sidebar = ({ sideBar, setSideBar }) => {
 
 	return (
 		<div
-			className={`${
-				(sideBar && "sidebarActive") || "nonActiveSidebar"
-			} sidebar_container`}
+			className={`${(sideBar && "sidebarActive") || "nonActiveSidebar"
+				} sidebar_container`}
 		>
 			<div className="top_side d-flex align-items-center justify-content-between ps-4 pe-3 w-100">
 				<div className="d-flex align-items-center">
-					<img src={avt} alt="" />
-					<p className="mb-0 ms-3 fw600 color3">MoloAIO</p>
+					<img src={user && user.avatar || avt} alt="" style={{ width: '30px' }} />
+					<p className="mb-0 ms-3 fw600 color3">PODIFY</p>
 				</div>
 				<FaRegTimesCircle
 					onClick={() => setSideBar(!sideBar)}
@@ -51,7 +52,7 @@ const Sidebar = ({ sideBar, setSideBar }) => {
 						<p className="mb-0">My Podcast</p>
 					</div>
 				</NavLink>
-				<NavLink to="/releases" activeClassName="activeNav">
+				<NavLink to="/statistics" activeClassName="activeNav">
 					<div className="mt-1 d-flex align-items-center position-relative">
 						<div className="img4"></div>
 						<p className="mb-0">Statistics</p>
@@ -60,15 +61,14 @@ const Sidebar = ({ sideBar, setSideBar }) => {
 			</div>
 
 			<div className="manage_side px-3 pt-2 pb-1 mt-4">
-				<p className="fw600 color2 ps-3 mb-3">Navigations</p>
+				<p className="fw600 color2 ps-3 mb-3"></p>
 				<ul className="d-flex flex-column d-md-none align-items-start ms-5 mb-0 list-unstyled">
 					{navigations.map((prev, i) => {
 						return (
 							<li
 								onClick={() => setActiveNav(i)}
-								className={`${activeNav === i && "text-decoration-underline"} ${
-									i !== 0 && "mt-3"
-								} pointer color5`}
+								className={`${activeNav === i && "text-decoration-underline"} ${i !== 0 && "mt-3"
+									} pointer color5`}
 								key={i}
 							>
 								{prev}

@@ -110,11 +110,11 @@ const LoginForm = ({ signin, setSignInUp, history }) => {
 						<br />
 						<div className="d-flex justify-content-between align-items-end">
 							<label htmlFor="Password">Password</label>
-							{signin && (
-								<label className="f12 color1 mb-0 fw600 pointer">
-									Forgot password?
-								</label>
-							)}
+							{signin}
+								{/* // <label className="f12 color1 mb-0 fw600 pointer">
+									
+								// </label> */}
+							
 						</div>
 						<div className="position-relative">
 							<input

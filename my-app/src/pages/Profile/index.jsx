@@ -36,7 +36,7 @@ const Profile = () => {
 			{/* BOTTOM SECTION */}
 			<img
 				className="bg-banner w-100"
-				src="https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80"
+				src="https://images2.alphacoders.com/649/649639.jpg"
 				alt=""
 			/>
 

@@ -88,7 +88,7 @@ const PopUp = ({ setPopup, podcastId,getListOfPodcasts }) => {
 							required />
 						<br />
 						<div className="text-end">
-							<button type="submit" className="text-white btn bg-purple-dark">Create</button>{" "}
+							<button type="submit" className="text-white btn bg-purple-dark">add</button>{" "}
 						</div>
 					</div>
 				</form>

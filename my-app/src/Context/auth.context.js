@@ -14,10 +14,10 @@ export const AuthProvider = ({ children }) => {
     // set states
     const [user, setUser] = useState(null);
     const [subItems, setsubItems] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true) //storing the loading state of the login form when it is being submitted
 
     useEffect(() => {
-        function loadUserFromCookies() {
+        function loadUserFromCookies() { //// load user info from cookies ///// 
             setLoading(true);
             const token = Cookies.get('token') /////// Import token from cookies ///////
             if (token) {
@@ -70,7 +70,8 @@ export const AuthProvider = ({ children }) => {
             }
         })
     }
-    // set context hook
+    //// set context hook ////
+    ////use memo يرجع قيمه محفوظه
     const contextValue = useMemo(() => {
         return { isAuthenticated: !!user, user, login, loading, logout, SubScribeList, subItems };
     }, [user, subItems, loading]);
@@ -85,7 +86,6 @@ export const AuthProvider = ({ children }) => {
 export const useAuthContext = () => useContext(AuthContext);
 
 
-
 // set root protection for user
 export const ProtectedRoute = (Component) => {
 
@@ -96,6 +96,9 @@ export const ProtectedRoute = (Component) => {
         return Login
     }
 }
+
+
+
 // set root protection for admin
 export const AdminProtectedRoute = (Component) => {
 
@@ -106,3 +109,4 @@ export const AdminProtectedRoute = (Component) => {
         return Login
     }
 }
+

@@ -4,7 +4,7 @@ import "./style.css";
 import { MdDelete } from "react-icons/md";
 import { HiOutlineSearch } from "react-icons/hi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import api from "../../utils/api"; // import basi api url with axios
+import api from "../../utils/api"; // import base api url with axios
 import { useAuthContext } from "../../Context/auth.context"; // import context hook 
 
 const Admin = () => {

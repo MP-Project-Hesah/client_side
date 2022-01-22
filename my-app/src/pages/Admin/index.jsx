@@ -20,6 +20,9 @@ const Admin = () => {
 		hasPrevPage: false,
 		hasNextPage: false
 	})
+
+
+	
 	// use effect to call the api first time
 	useEffect(() => {
 		getListOfPodcast({ limit: 10, page: 1 });// calling api with default pagination
@@ -34,7 +37,7 @@ const Admin = () => {
 				limit: data.limit,
 				page: data.page,
 				hasPrevPage: data.hasPrevPage, 
-				
+
 				hasNextPage: data.hasNextPage
 			})
 		}).catch((error) => {

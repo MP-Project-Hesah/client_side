@@ -33,7 +33,8 @@ const Admin = () => {
 				total: data.totalDocs,
 				limit: data.limit,
 				page: data.page,
-				hasPrevPage: data.hasPrevPage,
+				hasPrevPage: data.hasPrevPage, 
+				
 				hasNextPage: data.hasNextPage
 			})
 		}).catch((error) => {
